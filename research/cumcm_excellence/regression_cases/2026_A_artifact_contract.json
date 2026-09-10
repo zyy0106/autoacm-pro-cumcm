@@ -1,0 +1,76 @@
+{
+  "contest": "CUMCM",
+  "problem_id": "2026_A",
+  "inputs": [
+    {
+      "id": "problem_pdf",
+      "path": "../../../A题/A题.pdf",
+      "schema": {"pages": 4, "formula_pages": [3, 4]},
+      "units": {"length": "cm", "time": "s", "temperature": "degC", "moisture": "kg/kg dry basis"},
+      "processing": ["visually verify formulas and output instructions on pages 3-4"]
+    },
+    {
+      "id": "attachment1",
+      "path": "../../../A题/附件/附件1.xlsx",
+      "schema": {"sheets": ["Sheet1"], "rows": 241, "time_start_s": 0, "time_end_s": 14400, "time_step_s": 60, "columns": ["time_s", "chamber_temperature_C", "chamber_moisture_kg_per_kg"]},
+      "units": {"time_s": "s", "chamber_temperature_C": "degC", "chamber_moisture_kg_per_kg": "kg/kg"},
+      "processing": ["record interpolation and endpoint behavior separately from solver and output steps"]
+    },
+    {
+      "id": "attachment2",
+      "path": "../../../A题/附件/附件2.xlsx",
+      "schema": {"sheets": ["Sheet1"], "rows": 145, "time_start_s": 0, "time_end_s": 259200, "time_step_s": 1800, "columns": ["time_s", "radius_cm"]},
+      "units": {"time_s": "s", "radius_cm": "cm"},
+      "processing": ["use a monotonic radius interpolation and verify moving-coordinate mapping"]
+    },
+    {
+      "id": "result_templates",
+      "path": "../../../A题/附件/附件3",
+      "schema": {"files": ["result1.xlsx", "result2.xlsx", "result3.xlsx", "result4.xlsx"]},
+      "units": {"time": "s", "radius": "cm", "temperature": "degC", "moisture": "kg/kg dry basis"},
+      "processing": ["derive outputs from supplied templates without changing sheet semantics"]
+    }
+  ],
+  "deliverables": [
+    {
+      "id": "result1",
+      "path": "output/result1.xlsx",
+      "required": true,
+      "schema": {"sheets": ["温度", "水分浓度"], "time_grid_s": "1..1800 step 1", "radius_grid_cm": "0..2 step 0.1", "data_rows": 1800, "data_columns": 21, "precision_decimals": 4},
+      "source_evidence": ["A题.pdf#page=3", "附件3/result1.xlsx"],
+      "validation": ["sheet names", "1800 data rows", "21 radius columns", "no ellipsis", "four-decimal display"]
+    },
+    {
+      "id": "result2",
+      "path": "output/result2.xlsx",
+      "required": true,
+      "schema": {"sheets": ["温度", "水分浓度"], "time_grid_s": "1..10800 step 1", "radius_grid_cm": "0..2 step 0.1", "data_rows": 10800, "data_columns": 21, "precision_decimals": 4},
+      "source_evidence": ["A题.pdf#page=3", "附件3/result2.xlsx"],
+      "validation": ["sheet names", "10800 data rows", "21 radius columns", "no ellipsis", "four-decimal display"]
+    },
+    {
+      "id": "result3",
+      "path": "output/result3.xlsx",
+      "required": true,
+      "schema": {"sheets": ["Sheet1"], "time_grid_s": "60..drying_end step 60", "radius_grid_cm": "0..2 step 0.1", "precision_decimals": 4},
+      "source_evidence": ["A题.pdf#page=3", "附件3/result3.xlsx"],
+      "validation": ["dynamic final row supports threshold event", "no ellipsis", "four-decimal display"]
+    },
+    {
+      "id": "result4",
+      "path": "output/result4.xlsx",
+      "required": true,
+      "schema": {"sheets": ["Sheet1"], "time_grid_s": "60..drying_end step 60", "radius_grid": "0.1 cm physical spacing plus time-varying surface", "precision_decimals": 4},
+      "source_evidence": ["A题.pdf#page=3", "附件3/result4.xlsx"],
+      "validation": ["surface included each time", "documented rectangular-grid convention", "no ellipsis", "four-decimal display"]
+    }
+  ],
+  "ambiguities": [
+    {
+      "id": "Q4_surface_column",
+      "location": "A题.pdf#page=3 and 附件3/result4.xlsx",
+      "description": "A rectangular workbook needs an explicit convention for a time-varying physical surface column.",
+      "status": "open"
+    }
+  ]
+}

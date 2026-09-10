@@ -1,0 +1,76 @@
+problem_id: 2026_A
+title: 药材的烘干问题
+authority: current_problem_statement
+problem_fingerprint:
+  mechanism:
+    - transient_heat_conduction
+    - moisture_diffusion
+    - convective_boundary_exchange
+    - nonlinear_state_dependent_coefficients
+    - moving_boundary_shrinkage
+  geometry: long_cylinder_radial_axisymmetric_candidate
+  state_variables: [temperature_T, dry_basis_moisture_C]
+  decision_variables: []
+  inputs:
+    - chamber_temperature_time_series
+    - chamber_moisture_time_series
+    - radius_time_series
+    - empirical_property_relations
+  constraints:
+    - initial_conditions
+    - center_symmetry
+    - surface_heat_and_mass_exchange
+    - coefficient_units_and_positivity
+    - moisture_threshold_everywhere
+  outputs:
+    - result1.xlsx
+    - result2.xlsx
+    - drying_end_time_q3
+    - result3.xlsx
+    - drying_end_time_q4
+    - result4.xlsx
+  uncertainty:
+    - interpolation_between_attachment_samples
+    - empirical_formula_applicability
+    - numerical_discretization
+    - interpretation_of_shrinking_radius_output_grid
+  validation_opportunities:
+    - initial_and_boundary_residuals
+    - dimensional_analysis
+    - coefficient_range_checks
+    - radial_symmetry
+    - time_and_space_grid_convergence
+    - simplified_constant_coefficient_benchmark
+    - threshold_event_bracketing
+    - moving_grid_mapping_and_mass_balance
+    - workbook_schema_and_rounding
+
+question_graph:
+  - id: M1
+    purpose: 固定半径下生成温度与含水率径向状态
+    reused_by: [Q1, Q2, Q3]
+    variants:
+      Q1: time_varying_chamber_and_appendix_2_parameters
+      Q2: full_process_and_appendix_3_properties
+      Q3: continue_Q2_until_global_moisture_threshold
+  - id: M2
+    purpose: 半径收缩下生成温度与含水率径向状态
+    reused_by: [Q4]
+    depends_on: [M1_interfaces]
+    changes:
+      - radius_from_attachment_2
+      - appendix_4_properties
+      - moving_domain_coordinate_mapping
+
+modeling_cautions:
+  - "题面给出长 25 cm、半径 2 cm；采用纯径向模型前必须说明端部效应为何可忽略。"
+  - "附件 1 覆盖 0--14400 s，但 Q1 只要求 0--1800 s；Q2 的恒温阶段边界条件需由题面完整语境明确，不能擅自外推附件 1。"
+  - "扩散系数指数必须以 PDF 原页为准，不能用 OCR 断行文本。"
+  - "Q4 的‘每隔 0.1 cm’与时变表面列存在矩形工作簿表达歧义，实施前必须形成显式输出解释并做模板验收。"
+  - "‘各处低于 0.15’是全空间事件，不能只检查中心或离散输出时刻。"
+
+evidence_basis:
+  current_problem: primary
+  official_format: compliance_only
+  ocr_corpus: workflow_analogues_only
+  direct_drying_papers_in_corpus: 0

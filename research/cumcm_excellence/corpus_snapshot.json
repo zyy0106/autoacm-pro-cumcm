@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-09-10T21:16:00+08:00",
+  "scope": "critical indexes, current A inputs, official format, and aggregate corpus inventory",
+  "corpus": {
+    "root": "../../../../物理类优秀论文_OCR知识库",
+    "papers": 25,
+    "problem_families": 10,
+    "expected_pages": 1199,
+    "page_pngs": 1199,
+    "layout_pages": 1199,
+    "files": 1618,
+    "bytes": 865762351,
+    "audit_status": "PASS",
+    "audit_errors": 0
+  },
+  "files": [
+    {"path": "物理类优秀论文_OCR知识库/manifest.json", "bytes": 4127, "sha256": "91986B83609B2E4876BC09F30F60D0471508904DD4EAF7FCCE9FD70688C6B0AB", "source_type": "corpus_index"},
+    {"path": "物理类优秀论文_OCR知识库/AUDIT_REPORT.json", "bytes": 14138, "sha256": "0FE730E7A51BFA543CB8557574A0F2B30B3B3C125BAB25F280BE9272E860AE06", "source_type": "generated_audit"},
+    {"path": "物理类优秀论文_OCR知识库/CODEX_CORPUS_STREAM.jsonl", "bytes": 13389848, "sha256": "A9F0AC662584C13E5E0684BE52FB78AAD8073DEB5E86499627755D45828A74D2", "source_type": "corpus_stream"},
+    {"path": "物理类优秀论文_OCR知识库/CORPUS_INDEX.md", "bytes": 5241, "sha256": "608D69A1F0D52D462FE3250F911C839888AFEEECE280E67923C79F72246292D5", "source_type": "corpus_index"},
+    {"path": "物理类优秀论文_OCR知识库/MODEL_WORKFLOW_INDEX.md", "bytes": 7759, "sha256": "F25973B10A8A9F1981045714AB25A4767D2F90BBC332C736905EEAC58DC8A9B7", "source_type": "workflow_index"},
+    {"path": "物理类优秀论文_OCR知识库/STYLE_WORKFLOW_GUIDE.md", "bytes": 5692, "sha256": "9A9B199251A49188B7E7E2E26D4AA0A41CFB420F921F5F5D5FBF5318AD64094C", "source_type": "workflow_index"},
+    {"path": "A题/A题.pdf", "bytes": 553320, "sha256": "052D8014BFF5727C019B72E44FDFFAF5C145CE04050DD938BAAF3527DB331736", "source_type": "current_problem"},
+    {"path": "A题/附件/附件1.xlsx", "bytes": 16586, "sha256": "7EF32870ABEEF420B89560B2530FF60DFE4255917805151D89988D0311AF9DD7", "source_type": "current_input"},
+    {"path": "A题/附件/附件2.xlsx", "bytes": 11485, "sha256": "5563ACBFA4B4AFB10CC6C03E2207E5369BF39DA27576672AFF14CC5C32E704AF", "source_type": "current_input"},
+    {"path": "A题/附件/附件3/result1.xlsx", "bytes": 10073, "sha256": "23B261B295C1B787D000EEBBCA6521C37075107B6FCF78724F8D395CE1798FF4", "source_type": "current_output_template"},
+    {"path": "A题/附件/附件3/result2.xlsx", "bytes": 10073, "sha256": "23B261B295C1B787D000EEBBCA6521C37075107B6FCF78724F8D395CE1798FF4", "source_type": "current_output_template"},
+    {"path": "A题/附件/附件3/result3.xlsx", "bytes": 9345, "sha256": "07E4793D620A7F899804C0298D49A16A197960440FD47F8BB780C57EC27E2859", "source_type": "current_output_template"},
+    {"path": "A题/附件/附件3/result4.xlsx", "bytes": 9351, "sha256": "86E9300FFA3D30C43DE895EA6723DA943E85B8740B137BCAE5AF7107F076EEAC", "source_type": "current_output_template"},
+    {"path": "format2026.doc", "bytes": 71168, "sha256": "D77DE49534649B46CA195D32BD9C56A1FBE06DC96FDCF3E1199E6DD7D9831F4A", "source_type": "official_format_local"}
+  ],
+  "stability_check": {
+    "first_audit_at": "2026-09-10T21:02:46+08:00",
+    "second_check_at": "2026-09-10T21:16:00+08:00",
+    "critical_files_changed": false
+  }
+}

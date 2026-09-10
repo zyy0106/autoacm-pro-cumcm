@@ -1,0 +1,9 @@
+[
+  {"pattern_id":"P-001","name":"problem_graph_before_model_units","scope":"global_default_check","support":["2022_A001:p3","2023_A127:p3,p9","2024_A178:p3"],"counterexamples":["2024_D033:p3,p22"],"confidence":"E3","skill_target":"problem_analysis","cost":"low"},
+  {"pattern_id":"P-002","name":"structure_baseline_failure_refinement","scope":"conditional:numerical_or_optimization","support":["2022_A171:p3,p21","2024_A178:p3,p18","2025_B060:p2,p13","2025_B157:p6,p12"],"counterexamples":["no analytic baseline may exist"],"confidence":"E3","skill_target":"model_build","cost":"medium"},
+  {"pattern_id":"P-003","name":"validation_by_invariant_and_failure_source","scope":"global_default_check","support":["2022_A001:p21","2022_A171:p21","2024_A178:p18","2025_B157:p17"],"counterexamples":["validation method depends on family"],"confidence":"E3","skill_target":"verify","cost":"medium"},
+  {"pattern_id":"P-004","name":"functional_not_fixed_counts","scope":"global_default_check","support":["2022_A001:p3,p21","2024_A178:p3","2025_B157:p17"],"counterexamples":["2024_D033:p3,p22"],"confidence":"E3","skill_target":"writing","cost":"low"},
+  {"pattern_id":"P-005","name":"artifact_contract","scope":"conditional:has_attachments_or_output_templates","support":["2026_A:problem_and_xlsx"],"counterexamples":[],"confidence":"authoritative_current_problem","skill_target":"data_preprocessing","cost":"low"},
+  {"pattern_id":"P-006","name":"ocr_visual_verification","scope":"conditional:ocr_corpus_use","support":["corpus_README","VISUAL_COVERAGE_INDEX","2026_A:p3,p4"],"counterexamples":[],"confidence":"data_integrity_invariant","skill_target":"case_review","cost":"medium"},
+  {"pattern_id":"P-007","name":"official_format_overrides_history","scope":"conditional:CUMCM_2026","support":["format2026.doc:article_5,11"],"counterexamples":["MCM/ICM has separate rules"],"confidence":"authoritative_official","skill_target":"compliance","cost":"low"}
+]

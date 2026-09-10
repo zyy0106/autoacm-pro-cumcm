@@ -1,0 +1,8 @@
+{"paper_id":"2022_A001","artifact":"topics/2022_A external candidate","relation":"partial_topic_match","license":"unconfirmed","verified_functions":[],"use":"locator_only"}
+{"paper_id":"2022_A171","artifact":"topics/2022_A external candidate","relation":"partial_topic_match","license":"unconfirmed","verified_functions":[],"use":"locator_only"}
+{"paper_id":"2023_A127","artifact":"topics/2023_A external source","relation":"high_topic_match","license":"see topic README","verified_functions":[],"use":"workflow_hint_only"}
+{"paper_id":"2024_A178","artifact":"topics/2024_A external sources","relation":"partial_topic_match_with_algorithm_mismatch","license":"see topic README","verified_functions":[],"use":"counterexample_to_filename_matching"}
+{"paper_id":"2025_B060","artifact":"topics/2025_B/CUMCM-2025B-Team","relation":"partial_topic_match","license":"MIT at topic level","verified_functions":[],"use":"workflow_hint_only"}
+{"paper_id":"2025_B157","artifact":"topics/2025_B/CUMCM-2025B-Team","relation":"high_topic_match_not_author_unique","license":"MIT at topic level","verified_functions":[],"use":"workflow_hint_only"}
+{"paper_id":"2024_D033","artifact":null,"relation":"no_credible_reusable_implementation","license":null,"verified_functions":[],"use":"negative_evidence"}
+{"paper_id":"2026_A","artifact":"A题 attachments","relation":"current_problem_authoritative","license":"contest_input","verified_functions":[],"use":"only factual source for current deliverables"}

@@ -1,0 +1,23 @@
+{
+  "questions": [
+    {"id": "Q1", "deliverables": ["result1"], "model_unit": "M1"},
+    {"id": "Q2", "deliverables": ["result2"], "model_unit": "M1"},
+    {"id": "Q3", "deliverables": ["drying_end_time_q3", "result3"], "model_unit": "M1"},
+    {"id": "Q4", "deliverables": ["drying_end_time_q4", "result4"], "model_unit": "M2"}
+  ],
+  "model_units": [
+    {
+      "id": "M1",
+      "questions": ["Q1", "Q2", "Q3"],
+      "depends_on": [],
+      "purpose": "fixed-radius radial heat and moisture state engine"
+    },
+    {
+      "id": "M2",
+      "questions": ["Q4"],
+      "depends_on": ["M1"],
+      "purpose": "moving-radius variant using the shared state interface"
+    }
+  ],
+  "question_to_model": {"Q1": "M1", "Q2": "M1", "Q3": "M1", "Q4": "M2"}
+}
